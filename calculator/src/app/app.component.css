@@ -1,0 +1,72 @@
+::ng-deep body {
+    background-color: #394867;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #293047;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    width: 350px;
+    height: auto;
+}
+
+.display {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    padding: 20px;
+    background-color: #1e2235;
+    width: 100%;
+    text-align: right;
+    color: white;
+}
+
+.keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    padding: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: white;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    height: 50px;
+}
+
+button.reset {
+    background-color: #6B7AA1;
+    color: #ffffff;
+}
+
+button.equal {
+    background-color: #C62E2E;
+    color: #ffffff;
+}
+
+.control-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.control-buttons button {
+    flex: 1;
+    height: 50px;
+    margin: 0 5px;
+}
