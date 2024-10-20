@@ -49,7 +49,7 @@ button {
 }
 
 button.reset {
-    background-color: #6B7AA1;
+    background-color: #6B7AA1; /* Color for DEL and RESET buttons */
     color: #ffffff;
 }
 
