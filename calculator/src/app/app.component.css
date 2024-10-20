@@ -32,44 +32,40 @@
 .keys {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    gap: 17px;
 }
 
 button {
     padding: 15px;
     font-size: 1.5rem;
     font-weight: bold;
-    background-color: white; /* Button background color */
-    color: #000; /* Text color */
+    background-color: white;
+    color: #000;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    width: 100%;
     height: 50px;
-    box-shadow: 0 5px 5px -2px #ffffff, 0 2px 2px #c8c8c8; /* Shadows only at the bottom */
+    box-shadow: 0 5px 5px -2px #ffffff, 0 2px 2px #c8c8c8;
 }
 
 button.reset {
-    background-color: #6B7AA1; /* Color for DEL and RESET buttons */
+    background-color: #6B7AA1;
     color: #ffffff;
-    box-shadow: 0 5px 5px -2px #4e5b7a, 0 2px 2px #4e5b7a; /* Darker shade for shadow */
+    box-shadow: 0 5px 5px -2px #4e5b7a, 0 2px 2px #4e5b7a;
+    flex: 1;
 }
 
 button.equal {
-    background-color: #C62E2E; /* Color for EQUAL button */
+    background-color: #C62E2E;
     color: #ffffff;
-    box-shadow: 0 5px 5px -2px #a32d2d, 0 2px 2px #a32d2d; /* Darker shade for shadow */
+    box-shadow: 0 5px 5px -2px #a32d2d, 0 2px 2px #a32d2d;
+    flex: 1;
 }
 
 .control-buttons {
     display: flex;
-    justify-content: space-between;
+    gap: 17px;
     width: 100%;
     margin-top: 10px;
-}
-
-.control-buttons button {
-    flex: 1;
-    height: 50px;
-    margin: 0 5px;
+    padding-top: 10px;
 }
