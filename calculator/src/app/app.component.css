@@ -21,7 +21,7 @@
 
 .display {
     font-size: 2rem;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     padding: 20px;
     background-color: #1e2235;
     width: 100%;
@@ -39,23 +39,26 @@ button {
     padding: 15px;
     font-size: 1.5rem;
     font-weight: bold;
-    background-color: white;
-    color: #000;
+    background-color: white; /* Button background color */
+    color: #000; /* Text color */
     border: none;
     border-radius: 5px;
     cursor: pointer;
     width: 100%;
     height: 50px;
+    box-shadow: 0 5px 5px -2px #ffffff, 0 2px 2px #c8c8c8; /* Shadows only at the bottom */
 }
 
 button.reset {
     background-color: #6B7AA1; /* Color for DEL and RESET buttons */
     color: #ffffff;
+    box-shadow: 0 5px 5px -2px #4e5b7a, 0 2px 2px #4e5b7a; /* Darker shade for shadow */
 }
 
 button.equal {
-    background-color: #C62E2E;
+    background-color: #C62E2E; /* Color for EQUAL button */
     color: #ffffff;
+    box-shadow: 0 5px 5px -2px #a32d2d, 0 2px 2px #a32d2d; /* Darker shade for shadow */
 }
 
 .control-buttons {
