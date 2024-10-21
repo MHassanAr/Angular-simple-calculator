@@ -14,7 +14,7 @@
     background-color: #293047;
     padding: 20px;
     border-radius: 6px;
-    box-shadow: 0 2px 5px #000000; /* Reduced shadow intensity */
+    box-shadow: 0 2px 5px #000000;
     width: 350px;
     height: auto;
 }
@@ -24,7 +24,7 @@
     margin-bottom: 20px;
     padding: 25px;
     background-color: #1e2235;
-    box-shadow: 0 2px 5px #000000; /* Reduced shadow intensity */
+    box-shadow: 0 2px 5px #000000;
     border-radius: 6px;
     text-align: right;
     color: #FFFFFF;
@@ -73,58 +73,67 @@ button.equal {
 
 .display-header {
     display: flex;
-    justify-content: space-between; /* Space between "calc" and the theme toggle */
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
-    width: 100%; /* Allow the header to take full width */
+    width: 100%;
 }
 
 .theme-toggle {
     display: flex;
-    align-items: center; /* Align items vertically */
+    align-items: center;
 }
 
 .toggle-wrapper {
     display: flex;
     align-items: center;
     background-color: #1e2235;
-    border: 2px solid #1e2235; /* Border for the toggle switch */
-    border-radius: 20px; /* Rounded corners for the border */
-    padding: 2px; /* Padding for the toggle area */
-    width: 48px; /* Adjusted width for toggle */
-    height: 14px; /* Adjusted height for toggle */
-    position: relative; /* For better positioning */
+    border: 2px solid #1e2235;
+    border-radius: 20px;
+    padding: 2px;
+    width: 48px;
+    height: 14px;
+    position: relative;
 }
 
 .theme-toggle input[type="checkbox"] {
-    display: none; /* Keep hidden */
+    display: none;
 }
 
 .theme-indicator {
-    width: 14px; /* Circle width */
-    height: 14px; /* Circle height */
-    background-color: #C62E2E; /* Color when unchecked */
-    border-radius: 50%; /* Circular shape */
-    transition: transform 0.3s ease-in-out;
-    position: absolute; /* Position relative to toggle */
-    top: 50%; /* Center vertically */
-    left: 2px; /* Initial position */
-    transform: translateY(-50%); /* Center circle */
+    width: 14px;
+    height: 14px;
+    background-color: #C62E2E;
+    border-radius: 50%;
+    transition: transform 0.4s ease-in-out;
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    transform: translateY(-50%);
 }
 
 .theme-toggle input[type="checkbox"]:checked ~ .theme-indicator {
-    transform: translate(36px, -50%); /* Move to the right when checked */
-    background-color: green; /* Color when checked */
+    transform: translate(36px, -50%);
+    background-color: green;
 }
 
 .theme-toggle label {
-    font-size: 0.6rem; /* Smaller font size for the label */
-    color: #FFFFFF; /* Ensure label is visible */
-    margin-right: 10px; /* Space between the label and the toggle */
+    font-size: 0.6rem;
+    color: #FFFFFF;
+    margin-right: 10px;
 }
 
-/* New style for "calc" */
 .display-header .calc-label {
-    font-weight: bold; /* Make the text bold */
-    color: #FFFFFF; /* Set the text color to white */
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.number-labels {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 0;
+    margin-right: 5px;
+    color: #FFFFFF;
+    font-size: 0.9rem;
+    width: 100%;
 }
