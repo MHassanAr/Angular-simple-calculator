@@ -9,7 +9,6 @@ import { CommonModule } from '@angular/common';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-
 export class AppComponent {
   result: string = '';
   keys: string[] = [
@@ -21,9 +20,9 @@ export class AppComponent {
 
   isDarkTheme: boolean = true; // Initial theme state
 
-  //Handling key presses
+  // Handling key presses
   onKeyPress(key: string) {
-    if (key == 'DEL') {
+    if (key === 'DEL') {
       this.result = this.deleteLast(this.result);
     } else if (key === '=') {
       this.result = this.evaluateExpression();
@@ -32,7 +31,7 @@ export class AppComponent {
     }
   }
 
-  //Evaluate the expression function
+  // Evaluate the expression function
   evaluateExpression(): string {
     try {
       return Function('"use strict";return (' + this.result + ')')().toString();
@@ -41,12 +40,12 @@ export class AppComponent {
     }
   }
 
-  //Delete the last character function
+  // Delete the last character function
   deleteLast(value: string): string {
     return value.length > 1 ? value.slice(0, -1) : '0';
   }
 
-  //Reset the calculator function
+  // Reset the calculator function
   reset() {
     this.result = '';
   }
