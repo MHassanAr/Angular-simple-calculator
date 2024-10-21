@@ -1,4 +1,14 @@
 <div class="calculator-display">
+  <div class="display-header">
+    <span class="calc-label">calc</span>
+    <div class="theme-toggle">
+      <label for="theme-switch">THEME</label>
+      <div class="toggle-wrapper">
+        <input type="checkbox" id="theme-switch" (change)="toggleTheme()">
+        <span class="theme-indicator"></span>
+      </div>
+    </div>
+  </div>
   <div class="display">{{result || '0'}}</div>
 </div>
 
