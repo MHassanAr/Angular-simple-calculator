@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [RouterOutlet, CommonModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 
 export class AppComponent {
@@ -18,6 +18,8 @@ export class AppComponent {
     '1', '2', '3', '-',
     '.', '0', '/', 'x'
   ];
+
+  isDarkTheme: boolean = true; // Initial theme state
 
   //Handling key presses
   onKeyPress(key: string) {
@@ -35,13 +37,13 @@ export class AppComponent {
     try {
       return Function('"use strict";return (' + this.result + ')')().toString();
     } catch {
-      return 'Error'; 
+      return 'Error';
     }
   }
 
   //Delete the last character function
   deleteLast(value: string): string {
-    return value.length > 1 ? value.slice(0, -1) : '0'; 
+    return value.length > 1 ? value.slice(0, -1) : '0';
   }
 
   //Reset the calculator function
@@ -49,5 +51,8 @@ export class AppComponent {
     this.result = '';
   }
 
-
+  // Toggle theme function
+  toggleTheme() {
+    this.isDarkTheme = !this.isDarkTheme;
+  }
 }
