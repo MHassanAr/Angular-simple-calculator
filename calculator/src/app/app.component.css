@@ -70,3 +70,61 @@ button.equal {
     margin-top: 10px;
     padding-top: 10px;
 }
+
+.display-header {
+    display: flex;
+    justify-content: space-between; /* Space between "calc" and the theme toggle */
+    align-items: center;
+    margin-bottom: 10px;
+    width: 100%; /* Allow the header to take full width */
+}
+
+.theme-toggle {
+    display: flex;
+    align-items: center; /* Align items vertically */
+}
+
+.toggle-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: #1e2235;
+    border: 2px solid #1e2235; /* Border for the toggle switch */
+    border-radius: 20px; /* Rounded corners for the border */
+    padding: 2px; /* Padding for the toggle area */
+    width: 48px; /* Adjusted width for toggle */
+    height: 14px; /* Adjusted height for toggle */
+    position: relative; /* For better positioning */
+}
+
+.theme-toggle input[type="checkbox"] {
+    display: none; /* Keep hidden */
+}
+
+.theme-indicator {
+    width: 14px; /* Circle width */
+    height: 14px; /* Circle height */
+    background-color: #C62E2E; /* Color when unchecked */
+    border-radius: 50%; /* Circular shape */
+    transition: transform 0.3s ease-in-out;
+    position: absolute; /* Position relative to toggle */
+    top: 50%; /* Center vertically */
+    left: 2px; /* Initial position */
+    transform: translateY(-50%); /* Center circle */
+}
+
+.theme-toggle input[type="checkbox"]:checked ~ .theme-indicator {
+    transform: translate(36px, -50%); /* Move to the right when checked */
+    background-color: green; /* Color when checked */
+}
+
+.theme-toggle label {
+    font-size: 0.6rem; /* Smaller font size for the label */
+    color: #FFFFFF; /* Ensure label is visible */
+    margin-right: 10px; /* Space between the label and the toggle */
+}
+
+/* New style for "calc" */
+.display-header .calc-label {
+    font-weight: bold; /* Make the text bold */
+    color: #FFFFFF; /* Set the text color to white */
+}
