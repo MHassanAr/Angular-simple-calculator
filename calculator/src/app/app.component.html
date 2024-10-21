@@ -1,12 +1,15 @@
-<div class="calculator">
+<div class="calculator-display">
   <div class="display">{{result || '0'}}</div>
-  <div class="keys">
-    <button *ngFor="let key of keys" 
-            (click)="onKeyPress(key)" 
-            [ngClass]="{ 'reset': key === 'DEL' }">{{key}}</button>
-  </div>
-  <div class="control-buttons">
-    <button class="reset" (click)="reset()">RESET</button>
-    <button class="equal" (click)="onKeyPress('=')">=</button>
+</div>
+
+<div class="calculator-buttons">
+  <div class="button-container">
+    <div class="keys">
+      <button *ngFor="let key of keys" (click)="onKeyPress(key)" [ngClass]="{ 'reset': key === 'DEL' }">{{key}}</button>
+    </div>
+    <div class="control-buttons">
+      <button class="reset" (click)="reset()">RESET</button>
+      <button class="equal" (click)="onKeyPress('=')">=</button>
+    </div>
   </div>
 </div>
