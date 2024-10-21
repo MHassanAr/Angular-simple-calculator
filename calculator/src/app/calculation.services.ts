@@ -13,7 +13,6 @@ export class CalculationService {
 
   calculate(expression: string): string {
     try {
-      // Use a safe evaluation method instead of eval
       return Function('"use strict";return (' + expression + ')')().toString();
     } catch {
       return 'Error'; // Handle any calculation errors
