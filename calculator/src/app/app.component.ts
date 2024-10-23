@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { CalculationService } from './calculation.services'; // Import the service
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,10 @@ import { CommonModule } from '@angular/common';
 })
 export class AppComponent {
   result: string = '';
+
+  // Inject the calculation service
+  constructor(private calculationService: CalculationService) {}
+
   keys: string[] = [
     '7', '8', '9', 'DEL',
     '4', '5', '6', '+',
@@ -20,37 +25,23 @@ export class AppComponent {
 
   isDarkTheme: boolean = true; // Initial theme state
 
-  // Handling key presses
+  // Handling key presses by delegating to the service
   onKeyPress(key: string) {
     if (key === 'DEL') {
-      this.result = this.deleteLast(this.result);
+      this.result = this.calculationService.deleteLast(this.result);
     } else if (key === '=') {
-      this.result = this.evaluateExpression();
+      this.result = this.calculationService.calculate(this.result);
     } else {
-      this.result += key === 'x' ? '*' : key;
+      this.result = this.calculationService.handleKeyPress(this.result, key === 'x' ? '*' : key);
     }
   }
 
-  // Evaluate the expression function
-  evaluateExpression(): string {
-    try {
-      return Function('"use strict";return (' + this.result + ')')().toString();
-    } catch {
-      return 'Error';
-    }
-  }
-
-  // Delete the last character function
-  deleteLast(value: string): string {
-    return value.length > 1 ? value.slice(0, -1) : '0';
-  }
-
-  // Reset the calculator function
+  // Reset the calculator
   reset() {
-    this.result = '';
+    this.result = '0'; // Reset to initial state
   }
 
-  // Toggle theme function
+  // Toggle theme
   toggleTheme() {
     this.isDarkTheme = !this.isDarkTheme;
   }
